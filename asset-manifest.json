@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/felipecarvalho180/resume.git/static/js/main.d124ad96.chunk.js",
+    "main.js.map": "/felipecarvalho180/resume.git/static/js/main.d124ad96.chunk.js.map",
+    "runtime-main.js": "/felipecarvalho180/resume.git/static/js/runtime-main.12496c2a.js",
+    "runtime-main.js.map": "/felipecarvalho180/resume.git/static/js/runtime-main.12496c2a.js.map",
+    "static/js/2.3703cd54.chunk.js": "/felipecarvalho180/resume.git/static/js/2.3703cd54.chunk.js",
+    "static/js/2.3703cd54.chunk.js.map": "/felipecarvalho180/resume.git/static/js/2.3703cd54.chunk.js.map",
+    "index.html": "/felipecarvalho180/resume.git/index.html",
+    "precache-manifest.02b63603b8363dd7fc4e2f56dfaa3e92.js": "/felipecarvalho180/resume.git/precache-manifest.02b63603b8363dd7fc4e2f56dfaa3e92.js",
+    "service-worker.js": "/felipecarvalho180/resume.git/service-worker.js",
+    "static/js/2.3703cd54.chunk.js.LICENSE.txt": "/felipecarvalho180/resume.git/static/js/2.3703cd54.chunk.js.LICENSE.txt",
+    "static/media/Felipe.pdf": "/felipecarvalho180/resume.git/static/media/Felipe.d5b93dd5.pdf",
+    "static/media/ProfileImage.jpg": "/felipecarvalho180/resume.git/static/media/ProfileImage.37424448.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.12496c2a.js",
+    "static/js/2.3703cd54.chunk.js",
+    "static/js/main.d124ad96.chunk.js"
+  ]
+}
