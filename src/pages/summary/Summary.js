@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 import styled from 'styled-components';
-import { Title } from '../../styles/component/ComponentStyles';
+import { Title, BaseLabel } from '../../styles/component/ComponentStyles';
 import { DARK_BLUE } from '../../styles/colors/Colors';
 
 export default function Summary() {
@@ -38,15 +38,14 @@ export default function Summary() {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
 `;
 
 const SummaryTitle = styled(Title)`
   margin-bottom: 40px;
 `;
 
-const SummaryLabel = styled.label`
-  font-size: 20px;
-  color: ${ DARK_BLUE };
+const SummaryLabel = styled(BaseLabel)`
   line-height: 35px;
   text-align: justify;
 `;

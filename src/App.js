@@ -6,6 +6,7 @@ import styled, { css } from 'styled-components';
 import PersonalInfo from './pages/personal-info/PersonalInfo';
 import GlobalStyles from './styles/global/GlobalStyles';
 import Summary from './pages/summary/Summary';
+import WorkExperience from './pages/work-experience/WorkExperience';
 import { mqDesktop } from './styles/helper/HelperStyles';
 
 function App() {
@@ -13,7 +14,10 @@ function App() {
     <Wrapper>
       <GlobalStyles />
       <PersonalInfo />
-      <Summary />
+      <ContentWrapper>
+        <Summary />
+        <WorkExperience />
+      </ContentWrapper>
     </Wrapper>
   );
 }
@@ -27,6 +31,11 @@ const Wrapper = styled.div`
   ${ mqDesktop(() => css`
     flex-direction: row;
   `) }
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export default App;

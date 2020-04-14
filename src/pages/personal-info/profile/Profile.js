@@ -63,9 +63,9 @@ const JobLabel = styled.label`
   color: ${ DARK_BLUE };
   margin-bottom: 10px;
   font-size: 34px;
-  align-self: center;
+  text-align: center;
 
   ${ mqDesktop(() => css`
-    font-size: 20px;
+    font-size: 25px;
   `) }
 `;

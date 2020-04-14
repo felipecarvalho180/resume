@@ -9,17 +9,27 @@ export const iconBaseStyle = css`
   color: ${ GRAY };
 `;
 
-export const Title = styled.label`
+export const BaseLabel = styled.label`
+  color: ${ DARK_BLUE };
+  font-size: 16px;
+`;
+
+export const Title = styled(BaseLabel)`
   font-size: 30px;
   font-weight: bold;
-  color: ${ DARK_BLUE };
 
   :first-child {
     margin-right: 5px;
   }
 `;
 
+export const SubTitle = styled(BaseLabel)`
+  font-size: 25px;
+`;
+
 export default {
   iconBaseStyle,
   Title,
+  SubTitle,
+  BaseLabel,
 }
