@@ -9,15 +9,15 @@ export default function Summary() {
   const [ screenSize, setScreenSize ] = useState(null);
 
   useEffect(() => {
-    window.addEventListener("resize", () => setScreenSize(window.screen.width));
+    window.addEventListener("resize", () => setScreenSize(window.innerWidth));
 
     return () => {
-      window.removeEventListener("resize", () => setScreenSize(window.screen.width));
+      window.removeEventListener("resize", () => setScreenSize(window.innerWidth));
     }
   });
 
   useEffect(() => {
-    setScreenSize(window.screen.width);
+    setScreenSize(window.innerWidth);
   }, [ ]);
 
   return (
