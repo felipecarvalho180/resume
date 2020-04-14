@@ -6,7 +6,7 @@ import { Title } from '../../styles/component/ComponentStyles';
 import { DARK_BLUE } from '../../styles/colors/Colors';
 
 export default function Summary() {
-  const [ screenSize, setScreenSize ] = useState(0);
+  const [ screenSize, setScreenSize ] = useState(null);
 
   useEffect(() => {
     window.addEventListener("resize", () => setScreenSize(window.screen.width));
@@ -15,6 +15,10 @@ export default function Summary() {
       window.removeEventListener("resize", () => setScreenSize(window.screen.width));
     }
   });
+
+  useEffect(() => {
+    setScreenSize(window.screen.width);
+  }, [ ]);
 
   return (
     <Wrapper>
