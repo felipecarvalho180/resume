@@ -1,13 +1,13 @@
 
 import React, { Fragment } from 'react'
 
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import CONTACT from '../../../constants/contact/ContactConstants';
 import Contact from './contact/Contact';
 import { LIGHT_BLUE } from '../../../styles/colors/Colors';
 import PDF from '../../../assets/Felipe.pdf';
-import { pointer } from '../../../styles/helper/HelperStyles';
+import { pointer, mqDesktop } from '../../../styles/helper/HelperStyles';
 import { transitions } from 'polished';
 
 export default function Contacts() {
@@ -39,11 +39,13 @@ const ResumeButton = styled.a`
 
   ${ pointer };
 
-  :hover {
-    opacity: .7;
-    scale: 1.05;
-    ${ transitions(['scale', 'opacity'], 'ease .3s') };
-  }
+  ${ mqDesktop(() => css`
+    :hover {
+      opacity: .7;
+      scale: 1.05;
+      ${ transitions(['scale', 'opacity'], 'ease .3s') };
+    }
+  `) }
 `;
 
 const ButtonLabel = styled.label`

@@ -22,10 +22,11 @@ const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 20px;
+  margin-bottom: 100px;
 
   ${ mqDesktop(() => css`
-    width: 400px;
+    width: 500px;
     padding: 20px 50px;
+    margin-bottom: 0;
   `) }
 `;

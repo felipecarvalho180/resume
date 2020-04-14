@@ -7,6 +7,7 @@ import CircleBackgroundImage from '../../../components/circle-background-image/C
 import ProfileImage from '../../../assets/ProfileImage.jpg';
 import { DARK_BLUE } from '../../../styles/colors/Colors';
 import { mqDesktop } from '../../../styles/helper/HelperStyles';
+import { Title } from '../../../styles/component/ComponentStyles';
 
 export default function Profile() {
   return (
@@ -14,8 +15,8 @@ export default function Profile() {
       <PersonalWrapper>
         <CustomCircleBackgroundImage src={ ProfileImage } />
         <NameWrapper>
-          <NameLabel>Felipe</NameLabel>
-          <NameLabel>Carvalho</NameLabel>
+          <Title>Felipe</Title>
+          <Title>Carvalho</Title>
         </NameWrapper>
       </PersonalWrapper>
       <JobLabel>Front End Developer</JobLabel>
@@ -56,16 +57,6 @@ const CustomCircleBackgroundImage = styled(CircleBackgroundImage)`
   width: 250px;
   border-radius: 125px;
   margin-bottom: 20px;
-`;
-
-const NameLabel = styled.label`
-  font-size: 30px;
-  font-weight: bold;
-  color: ${ DARK_BLUE };
-
-  :first-child {
-    margin-right: 5px;
-  }
 `;
 
 const JobLabel = styled.label`
