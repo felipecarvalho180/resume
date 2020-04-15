@@ -8,7 +8,7 @@ import { Github } from '@styled-icons/boxicons-logos/Github';
 
 import { iconBaseStyle } from '../../../../styles/component/ComponentStyles';
 import { GRAY, DARK_BLUE } from '../../../../styles/colors/Colors';
-import { pointer } from '../../../../styles/helper/HelperStyles';
+import { pointer, mqDesktop } from '../../../../styles/helper/HelperStyles';
 import { transitions } from 'polished';
 
 export default function Contact({
@@ -41,19 +41,24 @@ const Wrapper = styled.a`
   margin-bottom: 10px;
   padding-bottom: 10px;
   text-decoration: none;
-  scale: 1;
 
-  ${ pointer };
+  ${ mqDesktop(() => css`
+    ${ ({ href }) => !!href && css`
+      scale: 1;
 
-  :hover {
-    &, * {
-      font-size: 22px;
-      height: 30px;
-      scale: 1.01;
+      ${ pointer };
 
-      ${ transitions(['font-size', 'height', 'scale'], 'ease-in .2s') };
-    }
-  }
+      :hover {
+        &, * {
+          font-size: 22px;
+          height: 30px;
+          scale: 1.01;
+
+          ${ transitions(['font-size', 'height', 'scale'], 'ease-in .2s') };
+        }
+      }
+    ` }
+  `) }
 `;
 
 const contactIconStyle = css`

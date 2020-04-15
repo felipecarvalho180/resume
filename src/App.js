@@ -8,6 +8,7 @@ import GlobalStyles from './styles/global/GlobalStyles';
 import Summary from './pages/summary/Summary';
 import WorkExperience from './pages/work-experience/WorkExperience';
 import { mqDesktop } from './styles/helper/HelperStyles';
+import Education from './pages/education/Education';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <ContentWrapper>
         <Summary />
         <WorkExperience />
+        <Education />
       </ContentWrapper>
     </Wrapper>
   );

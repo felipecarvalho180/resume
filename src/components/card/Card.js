@@ -6,33 +6,43 @@ import { CalendarAlt } from '@styled-icons/boxicons-regular/CalendarAlt';
 import { Building } from '@styled-icons/fa-regular/Building';
 import { LocationOn } from '@styled-icons/material-outlined/LocationOn';
 
-import { GRAY, LIGHT_GREEN } from '../../../styles/colors/Colors';
-import { SubTitle, BaseLabel, iconBaseStyle } from '../../../styles/component/ComponentStyles';
-import { mqDesktop, mqTablet } from '../../../styles/helper/HelperStyles';
+import { GRAY, LIGHT_GREEN } from '../../styles/colors/Colors';
+import { SubTitle, BaseLabel, iconBaseStyle } from '../../styles/component/ComponentStyles';
+import { mqDesktop, mqTablet } from '../../styles/helper/HelperStyles';
 
-export default function Card() {
+export default function Card({
+  value,
+  type,
+  company,
+  location,
+  timeLapsed,
+}) {
   return (
     <Wrapper>
       <ContentWrapper>
-        <CardSubTitle>Front End Developer</CardSubTitle>
-        <Badge>
-          <BadgeLabel>Full Time</BadgeLabel>
-        </Badge>
+        <CardSubTitle>{ value }</CardSubTitle>
+        { type && (
+          <Badge>
+            <BadgeLabel>{ type }</BadgeLabel>
+          </Badge>
+        ) }
       </ContentWrapper>
-        <InfoWrapper>
-          <InlineWrapper>
-            <BuildingIcon />
-            <CardLabel>Cogoli</CardLabel>
-          </InlineWrapper>
+      <InfoWrapper>
+        <InlineWrapper>
+          <BuildingIcon />
+          <CardLabel>{ company }</CardLabel>
+        </InlineWrapper>
+        { location && (
           <InlineWrapper>
             <LocationIcon />
-            <CardLabel>Petrópolis, RJ, Brazil</CardLabel>
+            <CardLabel>{ location }</CardLabel>
           </InlineWrapper>
-          <InlineWrapper>
-            <CalendarIcon />
-            <CardLabel>Jan, 2020</CardLabel>
-          </InlineWrapper>
-        </InfoWrapper>
+        ) }
+        <InlineWrapper>
+          <CalendarIcon />
+          <CardLabel>{ timeLapsed }</CardLabel>
+        </InlineWrapper>
+      </InfoWrapper>
     </Wrapper>
   );
 };
@@ -116,22 +126,15 @@ const CardLabel = styled(BaseLabel)`
 `;
 
 const InfoWrapper = styled(InlineWrapper)`
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  gap: 3px;
 
   ${ mqDesktop(() => css`
-    flex-wrap: nowrap;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
   `) }
-`;
-
-const AdditionalInfoWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  ${ mqDesktop(() => css`
-    flex-direction: row;
-    justify-content: space-between;
-  `) };
 `;
 
 const BuildingIcon = styled(Building)`

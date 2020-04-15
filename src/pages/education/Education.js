@@ -2,18 +2,19 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import { Title } from '../../styles/component/ComponentStyles';
-import Card from '../../components/card/Card';
-import Experience from '../../constants/experience/ExperienceConstants';
 
-export default function WorkExperience() {
+import { Title } from '../../styles/component/ComponentStyles';
+import Degree from '../../constants/degree/Degree';
+import Card from '../../components/card/Card';
+
+export default function Education() {
   return (
     <Wrapper>
-      <WorkExperienceTitle>Work Experience</WorkExperienceTitle>
-      { Experience.map(e => (
+      <EducationTitle>Education</EducationTitle>
+      { Degree.map(d => (
         <Card 
-          key={ e.timeLapsed }
-          { ...e }
+          key={ d.timeLapsed }
+          { ...d }
         />
       )) }
     </Wrapper>
@@ -23,9 +24,8 @@ export default function WorkExperience() {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 100px;
 `;
 
-const WorkExperienceTitle = styled(Title)`
+const EducationTitle = styled(Title)`
   margin-bottom: 40px;
 `;

@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 
 import styled from 'styled-components';
 import { Title, BaseLabel } from '../../styles/component/ComponentStyles';
-import { DARK_BLUE } from '../../styles/colors/Colors';
 
 export default function Summary() {
   const [ screenSize, setScreenSize ] = useState(null);
