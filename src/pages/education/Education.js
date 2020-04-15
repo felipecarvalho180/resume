@@ -1,31 +1,19 @@
 
 import React from 'react';
 
-import styled from 'styled-components';
-
-import { Title } from '../../styles/component/ComponentStyles';
-import Degree from '../../constants/degree/Degree';
 import Card from '../../components/card/Card';
+import Degree from '../../constants/degree/Degree';
+import Section from '../../components/section/Section';
 
 export default function Education() {
   return (
-    <Wrapper>
-      <EducationTitle>Education</EducationTitle>
+    <Section title='Education'>
       { Degree.map(d => (
         <Card 
           key={ d.timeLapsed }
           { ...d }
         />
       )) }
-    </Wrapper>
+    </Section>
   );
 };
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const EducationTitle = styled(Title)`
-  margin-bottom: 40px;
-`;

@@ -1,31 +1,19 @@
 
 import React from 'react';
 
-import styled from 'styled-components';
-import { Title } from '../../styles/component/ComponentStyles';
 import Card from '../../components/card/Card';
 import Experience from '../../constants/experience/ExperienceConstants';
+import Section from '../../components/section/Section';
 
 export default function WorkExperience() {
   return (
-    <Wrapper>
-      <WorkExperienceTitle>Work Experience</WorkExperienceTitle>
+    <Section title='Work Experience'>
       { Experience.map(e => (
         <Card 
           key={ e.timeLapsed }
           { ...e }
         />
       )) }
-    </Wrapper>
+    </Section>
   );
 };
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 100px;
-`;
-
-const WorkExperienceTitle = styled(Title)`
-  margin-bottom: 40px;
-`;

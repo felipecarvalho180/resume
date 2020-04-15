@@ -2,13 +2,13 @@
 import React, { Fragment } from 'react'
 
 import styled, { css } from 'styled-components';
+import { transitions } from 'polished';
 
+import { LIGHT_BLUE } from '../../../styles/colors/Colors';
+import { pointer, mqDesktop } from '../../../styles/helper/HelperStyles';
 import CONTACT from '../../../constants/contact/ContactConstants';
 import Contact from './contact/Contact';
-import { LIGHT_BLUE } from '../../../styles/colors/Colors';
 import PDF from '../../../assets/Felipe.pdf';
-import { pointer, mqDesktop } from '../../../styles/helper/HelperStyles';
-import { transitions } from 'polished';
 
 export default function Contacts() {
   return (

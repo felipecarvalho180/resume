@@ -3,11 +3,11 @@ import React from 'react';
 
 import styled, { css } from 'styled-components';
 
-import CircleBackgroundImage from '../../../components/circle-background-image/CircleBackgroundImage';
-import ProfileImage from '../../../assets/ProfileImage.jpg';
 import { DARK_BLUE } from '../../../styles/colors/Colors';
 import { mqDesktop } from '../../../styles/helper/HelperStyles';
 import { Title } from '../../../styles/component/ComponentStyles';
+import CircleBackgroundImage from '../../../components/circle-background-image/CircleBackgroundImage';
+import ProfileImage from '../../../assets/ProfileImage.jpg';
 
 export default function Profile() {
   return (

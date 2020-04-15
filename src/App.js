@@ -9,6 +9,7 @@ import Summary from './pages/summary/Summary';
 import WorkExperience from './pages/work-experience/WorkExperience';
 import { mqDesktop } from './styles/helper/HelperStyles';
 import Education from './pages/education/Education';
+import Techs from './pages/techs/Techs';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Summary />
         <WorkExperience />
         <Education />
+        <Techs />
       </ContentWrapper>
     </Wrapper>
   );

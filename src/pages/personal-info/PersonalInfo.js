@@ -4,8 +4,8 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 import { mqDesktop } from '../../styles/helper/HelperStyles';
-import Profile from './profile/Profile';
 import Contacts from './contacts/Contacts';
+import Profile from './profile/Profile';
 
 export default function PersonalInfo() {
   return (

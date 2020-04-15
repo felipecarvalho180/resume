@@ -2,10 +2,11 @@
 import React from 'react';
 
 import styled from 'styled-components';
+import propTypes from 'prop-types';
 
 export default function CircleBackgroundImage({
-  src,
   className,
+  src,
 }) {
   return (
     <Wrapper className={ className }>
@@ -26,3 +27,8 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
 `;
+
+CircleBackgroundImage.propTypes = {
+  className: propTypes.string,
+  src: propTypes.string,
+};

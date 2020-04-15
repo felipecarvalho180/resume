@@ -1,14 +1,15 @@
 
 import React from 'react';
 
-import styled, { css } from 'styled-components';
-import { CalendarAlt } from '@styled-icons/boxicons-regular/CalendarAlt';
 import { Building } from '@styled-icons/fa-regular/Building';
+import { CalendarAlt } from '@styled-icons/boxicons-regular/CalendarAlt';
 import { LocationOn } from '@styled-icons/material-outlined/LocationOn';
+import propTypes from 'prop-types';
+import styled, { css } from 'styled-components';
 
 import { GRAY, LIGHT_GREEN } from '../../styles/colors/Colors';
-import { SubTitle, BaseLabel, iconBaseStyle } from '../../styles/component/ComponentStyles';
 import { mqDesktop, mqTablet } from '../../styles/helper/HelperStyles';
+import { SubTitle, BaseLabel, iconBaseStyle } from '../../styles/component/ComponentStyles';
 
 export default function Card({
   value,
@@ -145,3 +146,11 @@ const BuildingIcon = styled(Building)`
 const LocationIcon = styled(LocationOn)`
   ${ cardIconBaseStyle };
 `;
+
+Card.propTypes = {
+  value: propTypes.string,
+  type: propTypes.string,
+  company: propTypes.string,
+  location: propTypes.string,
+  timeLapsed: propTypes.string,
+};

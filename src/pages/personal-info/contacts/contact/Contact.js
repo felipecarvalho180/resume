@@ -1,20 +1,21 @@
 
 import React from 'react';
 
-import styled, { css } from 'styled-components';
 import { Email } from '@styled-icons/material-outlined/Email';
-import { SocialLinkedin } from '@styled-icons/foundation/SocialLinkedin';
 import { Github } from '@styled-icons/boxicons-logos/Github';
-
-import { iconBaseStyle } from '../../../../styles/component/ComponentStyles';
-import { GRAY, DARK_BLUE } from '../../../../styles/colors/Colors';
-import { pointer, mqDesktop } from '../../../../styles/helper/HelperStyles';
+import { SocialLinkedin } from '@styled-icons/foundation/SocialLinkedin';
 import { transitions } from 'polished';
+import propTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+
+import { GRAY, DARK_BLUE } from '../../../../styles/colors/Colors';
+import { iconBaseStyle } from '../../../../styles/component/ComponentStyles';
+import { pointer, mqDesktop } from '../../../../styles/helper/HelperStyles';
 
 export default function Contact({
+  href,
   icon,
   value,
-  href
 }) {
   let Icon;
   switch(icon) {
@@ -84,3 +85,9 @@ const ValueLabel = styled.label`
   font-weight: bold;
   color: ${ DARK_BLUE };
 `;
+
+Contact.propTypes = {
+  href: propTypes.string,
+  icon: propTypes.string,
+  value: propTypes.string,
+};
