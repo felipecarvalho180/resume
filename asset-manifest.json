@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/resume/static/js/main.f5e386ec.chunk.js",
-    "main.js.map": "/resume/static/js/main.f5e386ec.chunk.js.map",
+    "main.js": "/resume/static/js/main.cd3505d6.chunk.js",
+    "main.js.map": "/resume/static/js/main.cd3505d6.chunk.js.map",
     "runtime-main.js": "/resume/static/js/runtime-main.07dda928.js",
     "runtime-main.js.map": "/resume/static/js/runtime-main.07dda928.js.map",
     "static/js/2.8da24f2a.chunk.js": "/resume/static/js/2.8da24f2a.chunk.js",
     "static/js/2.8da24f2a.chunk.js.map": "/resume/static/js/2.8da24f2a.chunk.js.map",
     "index.html": "/resume/index.html",
-    "precache-manifest.aef92bca506d7aa10c4461bb9b52cebf.js": "/resume/precache-manifest.aef92bca506d7aa10c4461bb9b52cebf.js",
+    "precache-manifest.64469f4a92deacbe84eea0d844a95d8e.js": "/resume/precache-manifest.64469f4a92deacbe84eea0d844a95d8e.js",
     "service-worker.js": "/resume/service-worker.js",
     "static/js/2.8da24f2a.chunk.js.LICENSE.txt": "/resume/static/js/2.8da24f2a.chunk.js.LICENSE.txt",
     "static/media/Felipe.pdf": "/resume/static/media/Felipe.d5b93dd5.pdf",
@@ -16,6 +16,6 @@
   "entrypoints": [
     "static/js/runtime-main.07dda928.js",
     "static/js/2.8da24f2a.chunk.js",
-    "static/js/main.f5e386ec.chunk.js"
+    "static/js/main.cd3505d6.chunk.js"
   ]
 }
