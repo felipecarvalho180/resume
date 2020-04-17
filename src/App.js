@@ -2,20 +2,20 @@
 import React from 'react';
 
 import styled, { css } from 'styled-components'; 
+import { useSelector } from 'react-redux';
 
-import PersonalInfo from './pages/personal-info/PersonalInfo';
 import GlobalStyles from './styles/global/GlobalStyles';
-import Summary from './pages/summary/Summary';
-import WorkExperience from './pages/work-experience/WorkExperience';
 import { mqDesktop } from './styles/helper/HelperStyles';
-import Education from './pages/education/Education';
-import Techs from './pages/techs/Techs';
 import SideBar from './pages/side-bar/SideBar';
 
 function App() {
+  const { darkMode } = useSelector(state => ({
+    darkMode: state.darkMode,
+  }));
+
   return (
     <Wrapper>
-      <GlobalStyles />
+      <GlobalStyles darkMode={ darkMode }/>
       <SideBar />
     </Wrapper>
   );

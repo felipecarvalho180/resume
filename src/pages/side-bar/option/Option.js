@@ -2,14 +2,16 @@
 import React from 'react';
 
 import styled, { css } from 'styled-components';
-import { UserCircle } from '@styled-icons/boxicons-regular/UserCircle';
-import { LineChart } from '@styled-icons/boxicons-regular/LineChart';
-import { Star } from '@styled-icons/boxicons-regular/Star';
+import { UserCircle, LineChart, Star } from '@styled-icons/boxicons-regular';
+import { transitions } from 'polished';
 
-import { LIGHT_ORANGE, ORANGE } from '../../../styles/colors/Colors';
+import { LIGHT_ORANGE, ORANGE, GRAY, DARK_GRAY } from '../../../styles/colors/Colors';
+import { pointer } from '../../../styles/helper/HelperStyles';
 
 export default function Option({
-  type
+  type,
+  onClick,
+  isActive,
 }) {
   let Icon;
   switch(type) {
@@ -20,10 +22,10 @@ export default function Option({
   }
 
   return(
-    <Wrapper>
-      <ActiveBar />
+    <Wrapper onClick={ onClick } isActive={ isActive }>
+      <ActiveBar isActive={ isActive }/>
       <IconWrapper>
-        <Icon />
+        <Icon isActive={ isActive }/>
       </IconWrapper>
     </Wrapper>
   );
@@ -39,13 +41,35 @@ const Wrapper = styled.div`
   display: flex;
   width: 100%;
   height: 60px;
-  background-color: ${ LIGHT_ORANGE };
+
+  ${ transitions([ 'background-color' ], 'ease .2s') };
+
+  ${ ({ isActive }) => isActive && css`
+    background-color: ${ LIGHT_ORANGE };
+  ` };
+
+  :hover {
+    background-color: ${ LIGHT_ORANGE };
+    ${ pointer };
+    & > :first-child {
+      width: 15px;
+    };
+
+    & > :last-child > svg {
+      color: ${ ORANGE };
+    }
+  };
 `;
 
 const ActiveBar = styled.div`
   height: 100%;
-  width: 10px;
   background-color: ${ ORANGE };
+  width: 0;
+
+  ${ ({ isActive }) => isActive && css`
+    width: 10px;
+  ` };
+  ${ transitions([ 'width' ], 'ease .2s') };
 `;
 
 const IconWrapper = styled.div`
@@ -57,7 +81,12 @@ const IconWrapper = styled.div`
 const iconBaseStyle = css`
   height: 25px;
   align-self: center;
-  color: ${ ORANGE };
+  color: ${ DARK_GRAY };
+  ${ ({ isActive }) => isActive && css`
+    color: ${ ORANGE };
+  ` };
+
+  ${ transitions([ 'color' ], 'ease .2s') };
 `;
 
 const UserIcon = styled(UserCircle)`
