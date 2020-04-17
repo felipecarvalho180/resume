@@ -1,5 +1,6 @@
 
 import { createGlobalStyle } from 'styled-components';
+import { GRAY } from '../colors/Colors';
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -7,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
+    background-color: ${ GRAY };
   }
 `;
 

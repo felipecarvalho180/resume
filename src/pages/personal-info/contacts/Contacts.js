@@ -40,10 +40,10 @@ const ResumeButton = styled.a`
   ${ pointer };
 
   ${ mqDesktop(() => css`
+    ${ transitions(['scale', 'opacity'], 'ease .3s') };
     :hover {
       opacity: .7;
       scale: 1.05;
-      ${ transitions(['scale', 'opacity'], 'ease .3s') };
     }
   `) }
 `;

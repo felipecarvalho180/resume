@@ -10,26 +10,27 @@ import WorkExperience from './pages/work-experience/WorkExperience';
 import { mqDesktop } from './styles/helper/HelperStyles';
 import Education from './pages/education/Education';
 import Techs from './pages/techs/Techs';
+import SideBar from './pages/side-bar/SideBar';
 
 function App() {
   return (
     <Wrapper>
       <GlobalStyles />
-      <PersonalInfo />
-      <ContentWrapper>
-        <Summary />
-        <WorkExperience />
-        <Education />
-        <Techs />
-      </ContentWrapper>
+      <SideBar />
     </Wrapper>
   );
 }
-
+    
+    // <PersonalInfo />
+    // <ContentWrapper>
+    //   <Summary />
+    //   <WorkExperience />
+    //   <Education />
+    //   <Techs />
+    // </ContentWrapper>
 const Wrapper = styled.div`
   display: flex;
   height: 100%;
-  padding: 20px;
   flex-direction: column;
 
   ${ mqDesktop(() => css`

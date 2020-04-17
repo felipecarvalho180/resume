@@ -14,6 +14,7 @@ import { SubTitle, BaseLabel, iconBaseStyle } from '../../styles/component/Compo
 export default function Card({
   value,
   type,
+  description,
   company,
   location,
   timeLapsed,
@@ -28,6 +29,9 @@ export default function Card({
           </Badge>
         ) }
       </ContentWrapper>
+      { description && (
+        <DescriptionLabel>{ description }</DescriptionLabel>
+      ) }
       <InfoWrapper>
         <InlineWrapper>
           <BuildingIcon />
@@ -115,6 +119,11 @@ const Badge = styled.div`
 const BadgeLabel = styled(BaseLabel)`
   font-weight: bold;
   align-self: center;
+`;
+
+const DescriptionLabel = styled(BaseLabel)`
+  margin-bottom: 10px;
+  text-align: justify;
 `;
 
 const CalendarIcon = styled(CalendarAlt)`

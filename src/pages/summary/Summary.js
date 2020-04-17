@@ -10,9 +10,10 @@ export default function Summary() {
   return (
     <Section title='Professional Summary' dinamicTitle>
       <SummaryLabel>
-        I'm learning Web Development for two and half years, and in that time I went through several challenges, througout my developer journey, however I'm a developer that always looking to grow up and overcome.<br/>
-        I have been working with a large part of the React eco system dealing with Hooks, Redux, Saga, Styled Components...<br/>
-        During the last year, I work with React Native where I could learn a lot about the mobile universe and its functionalities.<br/>
+        I've been working with web development for two and half years and in that time I went through several challenges, however I'm always looking to improve my skill set.<br /><br />
+
+        More specifically in the past year, worked with the React ecosystem meaning Hooks, Redux, Saga, Styled Components... I also worked with React Native where I could learn a lot about the mobile universe and its functionalities.<br /><br />
+        
         Welcome to my page!
       </SummaryLabel>
     </Section>

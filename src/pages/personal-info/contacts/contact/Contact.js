@@ -45,19 +45,16 @@ const Wrapper = styled.a`
 
   ${ mqDesktop(() => css`
     ${ ({ href }) => !!href && css`
-      scale: 1;
-
+      transform: scale(1);
+      opacity: 1;
       ${ pointer };
 
-      :hover {
-        &, * {
-          font-size: 22px;
-          height: 30px;
-          scale: 1.01;
-
-          ${ transitions(['font-size', 'height', 'scale'], 'ease-in .2s') };
-        }
+      ${ transitions([ 'transform', 'opacity' ], 'ease .3s') }
+      &:hover {
+        transform: scale(1.05);
+        opacity: 0.7;
       }
+
     ` }
   `) }
 `;
