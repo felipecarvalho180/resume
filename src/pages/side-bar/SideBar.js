@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { transitions } from 'polished';
 import styled from 'styled-components';
@@ -10,8 +10,14 @@ import { Creators as DarkModeReducerActions } from '../../reducers/dark-mode/dar
 import { WHITE, BLACK, LIGHT_BLACK } from '../../styles/colors/Colors';
 import Option from './option/Option';
 import CustomToggle from '../../components/custom-toggle/CustomToggle';
+import { withRouter } from 'react-router-dom';
+import PathConstants from '../../constants/path/PathConstants';
 
-export default function SideBar() {
+function SideBar({
+  history
+}) {
+  const { pathname } = history?.location;
+
   const { darkMode } = useSelector(state => ({
     darkMode: state.darkMode,
   }));
@@ -19,8 +25,14 @@ export default function SideBar() {
   const { updateDarkMode } = bindActionCreators({
     updateDarkMode: DarkModeReducerActions.updateDarkMode,
   }, useDispatch());
-  
+
   const [ selectedOption, setSelectedOption ] = useState(null);
+
+  useEffect(() => {
+    if(!pathname) return;
+    setSelectedOption(pathname);
+  }, [ pathname ]);
+  
 
   return (
     <Wrapper darkMode={ darkMode }>
@@ -29,7 +41,7 @@ export default function SideBar() {
           <Option 
             key={ so.type } 
             type={ so.type }
-            onClick={ () => setSelectedOption(so.type) }     
+            onClick={ () => history.push(so.type) }     
             isActive={ so.type === selectedOption }
           />
         )) }
@@ -44,16 +56,15 @@ export default function SideBar() {
 };
 
 SideBar.OPTIONS = [
-  { type: Option.TYPE.USER },
-  { type: Option.TYPE.TECHS },
-  { type: Option.TYPE.HISTORIC },
+  { type: PathConstants.HOME },
+  { type: PathConstants.TECHS },
+  { type: PathConstants.HISTORIC },
 ]
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  position: absolute;
-  height: 100%;
+  height: 100vh;
   width: 80px;
   padding: 30px 0;
   background-color: ${ WHITE };
@@ -74,3 +85,5 @@ const DarkModeToggle = styled(CustomToggle)`
   display: flex;
   align-self: center;
 `;
+
+export default withRouter(SideBar);

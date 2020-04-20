@@ -7,6 +7,7 @@ import { transitions } from 'polished';
 
 import { LIGHT_ORANGE, ORANGE, GRAY, DARK_GRAY } from '../../../styles/colors/Colors';
 import { pointer } from '../../../styles/helper/HelperStyles';
+import PathConstants from '../../../constants/path/PathConstants';
 
 export default function Option({
   type,
@@ -15,9 +16,9 @@ export default function Option({
 }) {
   let Icon;
   switch(type) {
-    case Option.TYPE.USER: Icon = UserIcon; break;
-    case Option.TYPE.TECHS: Icon = TechsIcon; break;
-    case Option.TYPE.HISTORIC: Icon = HistoricIcon; break;
+    case PathConstants.HOME: Icon = UserIcon; break;
+    case PathConstants.TECHS: Icon = TechsIcon; break;
+    case PathConstants.HISTORIC: Icon = HistoricIcon; break;
     default: throw new Error('Unknow type.');
   }
 
@@ -29,12 +30,6 @@ export default function Option({
       </IconWrapper>
     </Wrapper>
   );
-};
-
-Option.TYPE = {
-  USER: 'USER',
-  TECHS: 'TECHS',
-  HISTORIC: 'HISTORIC',
 };
 
 const Wrapper = styled.div`

@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import GlobalStyles from './styles/global/GlobalStyles';
 import { mqDesktop } from './styles/helper/HelperStyles';
 import SideBar from './pages/side-bar/SideBar';
+import Routes from './routes/Routes';
 
 function App() {
   const { darkMode } = useSelector(state => ({
@@ -17,6 +18,9 @@ function App() {
     <Wrapper>
       <GlobalStyles darkMode={ darkMode }/>
       <SideBar />
+      <ChildWrapper>
+        <Routes />
+      </ChildWrapper>
     </Wrapper>
   );
 }
@@ -31,16 +35,20 @@ function App() {
 const Wrapper = styled.div`
   display: flex;
   height: 100%;
-  flex-direction: column;
+  /* flex-direction: column; */
 
   ${ mqDesktop(() => css`
     flex-direction: row;
   `) }
 `;
 
-const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+const ChildWrapper = styled.div`
+  width: 100%;
 `;
+
+// const ContentWrapper = styled.div`
+//   display: flex;
+//   flex-direction: column;
+// `;
 
 export default App;
