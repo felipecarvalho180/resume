@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { Creators as DarkModeReducerActions } from '../../reducers/dark-mode/dark-mode.reducer';
-import { WHITE, BLACK, LIGHT_BLACK } from '../../styles/colors/Colors';
+import { WHITE, LIGHT_BLACK } from '../../styles/colors/Colors';
 import Option from './option/Option';
 import CustomToggle from '../../components/custom-toggle/CustomToggle';
 import { withRouter } from 'react-router-dom';
@@ -35,7 +35,7 @@ function SideBar({
   
 
   return (
-    <Wrapper darkMode={ darkMode }>
+    <Wrapper>
       <OptionWrapper>
         { SideBar.OPTIONS.map(so => (
           <Option 
@@ -61,18 +61,20 @@ SideBar.OPTIONS = [
   { type: PathConstants.HISTORIC },
 ]
 
-const Wrapper = styled.div`
+const Wrapper = styled.div.attrs({
+  id: 'SideBar'
+})`
   display: flex;
   flex-direction: column;
   height: 100vh;
   width: 80px;
   padding: 30px 0;
-  background-color: ${ WHITE };
   -webkit-box-shadow: 10px 0px 11px 0px rgba(0,0,0,0.1);
   -moz-box-shadow: 10px 0px 11px 0px rgba(0,0,0,0.1);
   box-shadow: 10px 0px 11px 0px rgba(0,0,0,0.1);
+  /* background-color: ${ WHITE };
   ${ transitions(['background-color'], 'ease .3s') };
-  background-color: ${ ({ darkMode }) => darkMode && LIGHT_BLACK };
+  background-color: ${ ({ darkMode }) => darkMode && LIGHT_BLACK }; */
 `;
 
 const OptionWrapper = styled.div`

@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'; 
+import { Switch, Route, Redirect } from 'react-router-dom'; 
 import Home from '../pages/home/Home';
 import Techs from '../pages/techs/Techs';
 import Historic from '../pages/historic/Historic';

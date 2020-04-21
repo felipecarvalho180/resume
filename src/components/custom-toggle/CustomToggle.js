@@ -4,8 +4,8 @@ import React from 'react';
 import styled from 'styled-components';
 import './style/style.css';
 import Toggle from 'react-toggle';
-import { Moon, Sun } from '@styled-icons/boxicons-regular/'
-import { WHITE, LIGHT_BLACK } from '../../styles/colors/Colors';
+import { Moon, Sun } from '@styled-icons/boxicons-solid/'
+import { ORANGE } from '../../styles/colors/Colors';
 
 export default function CustomToggle({
   onChange,
@@ -27,10 +27,10 @@ export default function CustomToggle({
 
 const MoonIcon = styled(Moon)`
   height: 15px;
-  color: ${ WHITE };
+  color: ${ ORANGE };
 `;
 
 const SunIcon = styled(Sun)`
   height: 15px;
-  color: ${ LIGHT_BLACK };
+  color: ${ ORANGE };
 `;

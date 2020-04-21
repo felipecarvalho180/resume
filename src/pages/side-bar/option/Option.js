@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components';
 import { UserCircle, LineChart, Star } from '@styled-icons/boxicons-regular';
 import { transitions } from 'polished';
 
-import { LIGHT_ORANGE, ORANGE, GRAY, DARK_GRAY } from '../../../styles/colors/Colors';
+import { LIGHT_ORANGE, ORANGE, DARK_GRAY } from '../../../styles/colors/Colors';
 import { pointer } from '../../../styles/helper/HelperStyles';
 import PathConstants from '../../../constants/path/PathConstants';
 

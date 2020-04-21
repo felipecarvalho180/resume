@@ -10,7 +10,7 @@ export const iconBaseStyle = css`
 `;
 
 export const BaseLabel = styled.label`
-  color: ${ DARK_BLUE };
+  /* color: ${ DARK_BLUE }; */
   font-size: 16px;
 `;
 

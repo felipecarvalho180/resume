@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import styled, { css } from 'styled-components'; 
 import { useSelector } from 'react-redux';
@@ -8,15 +8,43 @@ import GlobalStyles from './styles/global/GlobalStyles';
 import { mqDesktop } from './styles/helper/HelperStyles';
 import SideBar from './pages/side-bar/SideBar';
 import Routes from './routes/Routes';
+import { ORANGE, LIGHT_ORANGE, GRAY, WHITE, BLACK, LIGHT_BLACK } from './styles/colors/Colors';
 
 function App() {
   const { darkMode } = useSelector(state => ({
     darkMode: state.darkMode,
   }));
 
+  const [ activeColors, setActiveColors ] = useState({
+    primaryColor: ORANGE,
+    secondaryColor: LIGHT_ORANGE,
+    primaryBackgroundColor: GRAY,
+    secondaryBackgroundColor: WHITE,
+  })
+
+  useEffect(() => {
+    if(!darkMode) {
+      setActiveColors({
+        primaryColor: ORANGE,
+        secondaryColor: LIGHT_ORANGE,
+        primaryBackgroundColor: GRAY,
+        secondaryBackgroundColor: WHITE,
+      });
+      return;
+    }
+
+    setActiveColors({
+      primaryColor: ORANGE,
+      secondaryColor: LIGHT_ORANGE,
+      primaryBackgroundColor: BLACK,
+      secondaryBackgroundColor: LIGHT_BLACK,
+    });
+  }, [ darkMode ]);
+
+  console.log(activeColors)
   return (
     <Wrapper>
-      <GlobalStyles darkMode={ darkMode }/>
+      <GlobalStyles colors={ activeColors }/>
       <SideBar />
       <ChildWrapper>
         <Routes />
@@ -24,18 +52,9 @@ function App() {
     </Wrapper>
   );
 }
-    
-    // <PersonalInfo />
-    // <ContentWrapper>
-    //   <Summary />
-    //   <WorkExperience />
-    //   <Education />
-    //   <Techs />
-    // </ContentWrapper>
 const Wrapper = styled.div`
   display: flex;
   height: 100%;
-  /* flex-direction: column; */
 
   ${ mqDesktop(() => css`
     flex-direction: row;
@@ -45,10 +64,5 @@ const Wrapper = styled.div`
 const ChildWrapper = styled.div`
   width: 100%;
 `;
-
-// const ContentWrapper = styled.div`
-//   display: flex;
-//   flex-direction: column;
-// `;
 
 export default App;

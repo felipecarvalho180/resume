@@ -20,7 +20,7 @@ export default function LineChart({
 
 const LineChartWrapper = styled(Chart)`
   max-height: 300px;
-  width: 700px;
+  max-width: 900px;
 `;
 
 LineChart.propTypes = {

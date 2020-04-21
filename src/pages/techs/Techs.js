@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import { DARK_BLUE } from '../../styles/colors/Colors';
+import { ORANGE } from '../../styles/colors/Colors';
 import LineChart from '../../components/line-chart/LineChart';
 import Section from '../../components/section/Section';
 
@@ -24,10 +24,14 @@ export default function Techs() {
   }];
 
   const options = {
+    legend: {
+      show: false,
+    },
     xaxis: {
-      categories: [2017, 2018, 2019, 2020],
+      categories: [ 2017, 2018, 2019, 2020 ],
       labels: {
         style: {
+          colors: [ ORANGE, ORANGE, ORANGE, ORANGE ],
           fontSize: '20px'
         },
       }
@@ -36,12 +40,13 @@ export default function Techs() {
       title: {
         text: "Years of Experience",
         style: {
-          color: DARK_BLUE,
+          color: ORANGE,
           fontSize: '14px'
         }
       },
       labels: {
         style: {
+          colors: [ ORANGE, ORANGE, ORANGE, ORANGE ],
           fontSize: '20px'
         },
       }

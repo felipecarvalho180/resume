@@ -1,6 +1,5 @@
 
 import { createGlobalStyle } from 'styled-components';
-import { GRAY, BLACK } from '../colors/Colors';
 import { transitions } from 'polished';
 
 const GlobalStyles = createGlobalStyle`
@@ -10,14 +9,23 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
   
+  
   body {
     width: 100%;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    overflow-x: hidden;
-    background-color: ${ GRAY };
+    overflow: hidden;
+    background-color: ${ ({ colors }) => colors.primaryBackgroundColor };
     ${ transitions(['background-color'], 'ease .3s') };
-    background-color: ${ ({ darkMode }) => darkMode && BLACK };
+  }
+
+  h1, label {
+    color: ${ ({ colors }) => colors.primaryColor };
+  }
+
+  #SideBar {
+    ${ transitions(['background-color'], 'ease .3s') };
+    background-color: ${ ({ colors }) => colors.secondaryBackgroundColor };
   }
 `;
 
