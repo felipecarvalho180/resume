@@ -14,13 +14,17 @@ const GlobalStyles = createGlobalStyle`
     width: 100%;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    overflow: hidden;
     background-color: ${ ({ colors }) => colors.primaryBackgroundColor };
     ${ transitions(['background-color'], 'ease .3s') };
   }
 
   h1, label {
     color: ${ ({ colors }) => colors.primaryColor };
+  }
+
+  #Section {
+    ${ transitions(['background-color'], 'ease .3s') };
+    background-color: ${ ({ colors }) => colors.secondaryBackgroundColor };
   }
 
   #SideBar {

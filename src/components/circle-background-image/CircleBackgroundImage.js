@@ -3,6 +3,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 import propTypes from 'prop-types';
+import { ORANGE } from '../../styles/colors/Colors';
 
 export default function CircleBackgroundImage({
   className,
@@ -19,7 +20,7 @@ const Wrapper = styled.div`
   width: 50px;
   height: 50px;
   border-radius: 25px;
-  border: 1px solid #FFF;
+  border: 1px solid ${ ORANGE };
   overflow: hidden;
 `;
 

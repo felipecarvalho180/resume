@@ -1,58 +1,41 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import propTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Title } from '../../styles/component/ComponentStyles';
+import { DARK_GRAY, WHITE } from '../../styles/colors/Colors';
 
 export default function Section({
   children,
-  dinamicTitle,
-  title,
 }) {
-  const [ screenSize, setScreenSize ] = useState(null);
-
-  useEffect(() => {
-    window.addEventListener("resize", () => setScreenSize(window.innerWidth));
-
-    return () => {
-      window.removeEventListener("resize", () => setScreenSize(window.innerWidth));
-    }
-  });
-
-  useEffect(() => {
-    setScreenSize(window.innerWidth);
-  }, [ ]);
-
   return (
     <Wrapper>
-      { dinamicTitle ? screenSize >= 1080 && (
-        <SectionTitle>{ title }</SectionTitle>
-      ) : (
-        <SectionTitle>{ title }</SectionTitle>
-      ) }
       {children}
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.div.attrs({
+  id: 'Section'
+})`
   display: flex;
   flex-direction: column;
-  margin-bottom: 100px;
+  flex: 1;
+  background-color: ${ WHITE };
+  border-radius: 10px;
+  padding: 20px;
+  margin-right: 20px;
 
   :last-child {
-    margin-bottom: 0;
+    margin-right: 0px;
   }
-`;
 
-const SectionTitle = styled(Title)`
-  margin-bottom: 40px;
+  -webkit-box-shadow: 10px 0px 11px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 10px 0px 11px 0px rgba(0,0,0,0.1);
+  box-shadow: 10px 0px 11px 0px rgba(0,0,0,0.1);
 `;
 
 Section.propTypes = {
   children: propTypes.node,
-  dinamicTitle: propTypes.bool,
-  title: propTypes.string,
 };

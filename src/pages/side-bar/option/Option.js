@@ -7,26 +7,23 @@ import { transitions } from 'polished';
 
 import { LIGHT_ORANGE, ORANGE, DARK_GRAY } from '../../../styles/colors/Colors';
 import { pointer } from '../../../styles/helper/HelperStyles';
-import PathConstants from '../../../constants/path/PathConstants';
 
 export default function Option({
   type,
   onClick,
-  isActive,
 }) {
   let Icon;
   switch(type) {
-    case PathConstants.HOME: Icon = UserIcon; break;
-    case PathConstants.TECHS: Icon = TechsIcon; break;
-    case PathConstants.HISTORIC: Icon = HistoricIcon; break;
+    case 'Profile': Icon = UserIcon; break;
+    case 'Techs': Icon = TechsIcon; break;
+    case 'Historic': Icon = HistoricIcon; break;
     default: throw new Error('Unknow type.');
   }
 
   return(
-    <Wrapper onClick={ onClick } isActive={ isActive }>
-      <ActiveBar isActive={ isActive }/>
+    <Wrapper onClick={ onClick }>
       <IconWrapper>
-        <Icon isActive={ isActive }/>
+        <Icon />
       </IconWrapper>
     </Wrapper>
   );
@@ -39,16 +36,9 @@ const Wrapper = styled.div`
 
   ${ transitions([ 'background-color' ], 'ease .2s') };
 
-  ${ ({ isActive }) => isActive && css`
-    background-color: ${ LIGHT_ORANGE };
-  ` };
-
   :hover {
     background-color: ${ LIGHT_ORANGE };
     ${ pointer };
-    & > :first-child {
-      width: 15px;
-    };
 
     & > :last-child > svg {
       color: ${ ORANGE };
@@ -56,20 +46,9 @@ const Wrapper = styled.div`
   };
 `;
 
-const ActiveBar = styled.div`
-  height: 100%;
-  background-color: ${ ORANGE };
-  width: 0;
-
-  ${ ({ isActive }) => isActive && css`
-    width: 10px;
-  ` };
-  ${ transitions([ 'width' ], 'ease .2s') };
-`;
-
 const IconWrapper = styled.div`
   display: flex;
-  flex: 1;
+  width: 60px;
   justify-content: center;
 `;
 
@@ -77,11 +56,6 @@ const iconBaseStyle = css`
   height: 25px;
   align-self: center;
   color: ${ DARK_GRAY };
-  ${ ({ isActive }) => isActive && css`
-    color: ${ ORANGE };
-  ` };
-
-  ${ transitions([ 'color' ], 'ease .2s') };
 `;
 
 const UserIcon = styled(UserCircle)`

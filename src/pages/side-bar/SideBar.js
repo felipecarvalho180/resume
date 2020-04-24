@@ -1,22 +1,22 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import { transitions } from 'polished';
+import SweetScroll from 'sweet-scroll';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { Creators as DarkModeReducerActions } from '../../reducers/dark-mode/dark-mode.reducer';
-import { WHITE, LIGHT_BLACK } from '../../styles/colors/Colors';
 import Option from './option/Option';
 import CustomToggle from '../../components/custom-toggle/CustomToggle';
 import { withRouter } from 'react-router-dom';
-import PathConstants from '../../constants/path/PathConstants';
 
-function SideBar({
-  history
-}) {
-  const { pathname } = history?.location;
+function SideBar() {
+  const scroller = new SweetScroll({
+    easing: 'easeInOutQuad',
+    duration: 1000,
+    offset: -80,
+  });
 
   const { darkMode } = useSelector(state => ({
     darkMode: state.darkMode,
@@ -26,14 +26,6 @@ function SideBar({
     updateDarkMode: DarkModeReducerActions.updateDarkMode,
   }, useDispatch());
 
-  const [ selectedOption, setSelectedOption ] = useState(null);
-
-  useEffect(() => {
-    if(!pathname) return;
-    setSelectedOption(pathname);
-  }, [ pathname ]);
-  
-
   return (
     <Wrapper>
       <OptionWrapper>
@@ -41,8 +33,7 @@ function SideBar({
           <Option 
             key={ so.type } 
             type={ so.type }
-            onClick={ () => history.push(so.type) }     
-            isActive={ so.type === selectedOption }
+            onClick={ () => scroller.toElement(document.getElementById(so.type)) }
           />
         )) }
       </OptionWrapper>
@@ -56,36 +47,33 @@ function SideBar({
 };
 
 SideBar.OPTIONS = [
-  { type: PathConstants.HOME },
-  { type: PathConstants.TECHS },
-  { type: PathConstants.HISTORIC },
+  { type: 'Profile' },
+  { type: 'Techs' },
+  { type: 'Historic' },
 ]
 
 const Wrapper = styled.div.attrs({
   id: 'SideBar'
 })`
   display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 80px;
-  padding: 30px 0;
+  justify-content: space-between;
+  position: fixed;
+  width: 100vw;
+  z-index: 999;
+
   -webkit-box-shadow: 10px 0px 11px 0px rgba(0,0,0,0.1);
   -moz-box-shadow: 10px 0px 11px 0px rgba(0,0,0,0.1);
   box-shadow: 10px 0px 11px 0px rgba(0,0,0,0.1);
-  /* background-color: ${ WHITE };
-  ${ transitions(['background-color'], 'ease .3s') };
-  background-color: ${ ({ darkMode }) => darkMode && LIGHT_BLACK }; */
 `;
 
 const OptionWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  flex: 1;
 `;
 
 const DarkModeToggle = styled(CustomToggle)`
   display: flex;
   align-self: center;
+  margin-right: 35px;
 `;
 
 export default withRouter(SideBar);
