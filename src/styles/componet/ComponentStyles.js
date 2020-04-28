@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 export const Title = styled.label`
-  font-size: 30px;
+  font-size: 22px;
   font-weight: bold;
 `;
 

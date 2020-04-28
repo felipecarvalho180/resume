@@ -4,11 +4,11 @@ import React, { Fragment } from 'react'
 import styled, { css } from 'styled-components';
 import { transitions } from 'polished';
 
-import { LIGHT_BLUE } from '../../../styles/colors/Colors';
-import { pointer, mqDesktop } from '../../../styles/helper/HelperStyles';
-import CONTACT from '../../../constants/contact/ContactConstants';
+import { LIGHT_BLUE, ORANGE } from '../../../../styles/colors/Colors';
+import { pointer, mqDesktop } from '../../../../styles/helper/HelperStyles';
+import CONTACT from '../../../../constants/contact/ContactConstants';
 import Contact from './contact/Contact';
-import PDF from '../../../assets/Felipe.pdf';
+import PDF from '../../../../assets/Felipe.pdf';
 
 export default function Contacts() {
   return (
@@ -29,10 +29,11 @@ export default function Contacts() {
 const ResumeButton = styled.a`
   display: flex;
   justify-content: center;
-  width: 250px;
-  height: 50px;
-  margin-top: 50px;
-  background-color: ${ LIGHT_BLUE };
+  align-self: center;
+  width: 150px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: ${ ORANGE };
   border: none;
   border-radius: 15px;
   text-decoration: none;
@@ -40,16 +41,18 @@ const ResumeButton = styled.a`
   ${ pointer };
 
   ${ mqDesktop(() => css`
+    transform: scale(1);
+
     ${ transitions(['scale', 'opacity'], 'ease .3s') };
     :hover {
       opacity: .7;
-      scale: 1.05;
+      transform: scale(1.01);
     }
   `) }
 `;
 
 const ButtonLabel = styled.label`
-  font-size: 20px;
+  font-size: 16px;
   color: #FFF;
   align-self: center;
 `;

@@ -7,10 +7,10 @@ import { SocialLinkedin } from '@styled-icons/foundation/SocialLinkedin';
 import { transitions } from 'polished';
 import propTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+import { GRAY, DARK_BLUE, DARK_GRAY, ORANGE } from '../../../../../styles/colors/Colors';
+import { mqDesktop, pointer } from '../../../../../styles/helper/HelperStyles';
 
-import { GRAY, DARK_BLUE } from '../../../../styles/colors/Colors';
-import { iconBaseStyle } from '../../../../styles/component/ComponentStyles';
-import { pointer, mqDesktop } from '../../../../styles/helper/HelperStyles';
+
 
 export default function Contact({
   href,
@@ -51,7 +51,7 @@ const Wrapper = styled.a`
 
       ${ transitions([ 'transform', 'opacity' ], 'ease .3s') }
       &:hover {
-        transform: scale(1.05);
+        transform: scale(1.01);
         opacity: 0.7;
       }
 
@@ -60,7 +60,9 @@ const Wrapper = styled.a`
 `;
 
 const contactIconStyle = css`
-  ${ iconBaseStyle };
+  height: 18px;
+  align-self: center;
+  color: ${ DARK_GRAY };
   margin-right: 5px;
 `;
 
@@ -78,9 +80,9 @@ const GithubIcon = styled(Github)`
 
 const ValueLabel = styled.label`
   align-self: center;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
-  color: ${ DARK_BLUE };
+  color: ${ ORANGE };
 `;
 
 Contact.propTypes = {

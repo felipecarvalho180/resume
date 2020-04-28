@@ -1,12 +1,12 @@
 
 import React from 'react';
 
-import styled, { css } from 'styled-components';
-import { ResponsiveLine } from '@nivo/line'
+import styled from 'styled-components';
+import { ResponsiveLine } from '@nivo/line';
 
-import { ORANGE } from '../../styles/colors/Colors';
-import LineChart from '../../components/line-chart/LineChart';
-import Section from '../../components/section/Section';
+import { ORANGE } from '../../../styles/colors/Colors';
+import Section from '../../../components/section/Section';
+import { Title } from '../../../styles/componet/ComponentStyles';
 
 export default function Techs() {
   const data = [{
@@ -89,13 +89,14 @@ export default function Techs() {
   return (
     <Wrapper>
       <Section>
+        <CustomTitle>Techs</CustomTitle>
         <ResponsiveLine
           enablePoints={ true }
           data={data}
           margin={{ 
             top: 20, 
             right: 20,
-            bottom: 30, 
+            bottom: 90, 
             left: 50
           }}
           enableSlices='x'
@@ -156,11 +157,16 @@ export default function Techs() {
 const Wrapper = styled.div.attrs({
   id: 'Techs'
 })`
-  display: flex;
   height: 400px;
 
-  & > :first-child {
+  & > div > div:last-child {
     width: 100%;
+    height: 400px;
     align-items: center;
   }
+`;
+
+const CustomTitle = styled(Title)`
+  align-self: flex-start;
+  margin-bottom: 10px;
 `;

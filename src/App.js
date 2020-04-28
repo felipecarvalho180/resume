@@ -1,16 +1,13 @@
 
 import React, { useEffect, useState } from 'react';
 
-import styled, { css } from 'styled-components'; 
+import styled from 'styled-components'; 
 import { useSelector } from 'react-redux';
 
 import GlobalStyles from './styles/global/GlobalStyles';
-import { mqDesktop } from './styles/helper/HelperStyles';
 import SideBar from './pages/side-bar/SideBar';
 import Routes from './routes/Routes';
 import { ORANGE, LIGHT_ORANGE, GRAY, WHITE, BLACK, LIGHT_BLACK } from './styles/colors/Colors';
-import Home from './pages/home/Home';
-import Techs from './pages/techs/Techs';
 
 function App() {
   const { darkMode } = useSelector(state => ({

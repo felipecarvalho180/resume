@@ -22,6 +22,7 @@ const Wrapper = styled.div.attrs({
   display: flex;
   flex-direction: column;
   flex: 1;
+  height: 100%;
   background-color: ${ WHITE };
   border-radius: 10px;
   padding: 20px;

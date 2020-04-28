@@ -1,12 +1,14 @@
 
 import React from 'react';
 
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import CircleBackgroundImage from '../../../components/circle-background-image/CircleBackgroundImage';
 import ProfileImage from '../../../assets/ProfileImage.jpg';
 import { Title } from '../../../styles/componet/ComponentStyles';
 import Section from '../../../components/section/Section';
+import Contacts from './contacts/Contacts';
+import { mqTablet } from '../../../styles/helper/HelperStyles';
 
 export default function Profile() {
   return (
@@ -15,11 +17,11 @@ export default function Profile() {
         <PersonalWrapper>
           <CustomCircleBackgroundImage src={ ProfileImage } />
           <NameWrapper>
-            <Title>Felipe</Title>
-            <Title>Carvalho</Title>
+            <Title>Felipe Carvalho</Title>
           </NameWrapper>
         </PersonalWrapper>
         <JobLabel>Front End Developer</JobLabel>
+        <Contacts />
       </Section>
     </Wrapper>
   );
@@ -31,6 +33,10 @@ const Wrapper = styled.div.attrs({
   display: flex;
   flex: 1;
   margin-bottom: 20px;
+
+  ${ mqTablet(() => css`
+    margin-right: 20px;
+  `) }
 `;
 
 const PersonalWrapper = styled.div`
@@ -47,14 +53,14 @@ const NameWrapper = styled.div`
 `;
 
 const CustomCircleBackgroundImage = styled(CircleBackgroundImage)`
-  height: 250px;
-  width: 250px;
-  border-radius: 125px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
   margin-bottom: 20px;
 `;
 
 const JobLabel = styled.label`
-  margin-bottom: 10px;
-  font-size: 25px;
+  margin-bottom: 20px;
+  font-size: 16px;
   text-align: center;
 `;
