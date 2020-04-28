@@ -49,7 +49,7 @@ function SideBar() {
 SideBar.OPTIONS = [
   { type: 'Profile' },
   { type: 'Techs' },
-  { type: 'Historic' },
+  { type: 'WorkExperience' },
 ]
 
 const Wrapper = styled.div.attrs({

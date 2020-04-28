@@ -7,7 +7,7 @@ import { SocialLinkedin } from '@styled-icons/foundation/SocialLinkedin';
 import { transitions } from 'polished';
 import propTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { GRAY, DARK_BLUE, DARK_GRAY, ORANGE } from '../../../../../styles/colors/Colors';
+import { GRAY, DARK_GRAY, ORANGE } from '../../../../../styles/colors/Colors';
 import { mqDesktop, pointer } from '../../../../../styles/helper/HelperStyles';
 
 

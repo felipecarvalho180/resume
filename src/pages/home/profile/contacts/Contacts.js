@@ -4,7 +4,7 @@ import React, { Fragment } from 'react'
 import styled, { css } from 'styled-components';
 import { transitions } from 'polished';
 
-import { LIGHT_BLUE, ORANGE } from '../../../../styles/colors/Colors';
+import { ORANGE } from '../../../../styles/colors/Colors';
 import { pointer, mqDesktop } from '../../../../styles/helper/HelperStyles';
 import CONTACT from '../../../../constants/contact/ContactConstants';
 import Contact from './contact/Contact';

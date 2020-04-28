@@ -4,7 +4,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Section from '../../../components/section/Section';
-import { ORANGE } from '../../../styles/colors/Colors';
 
 export default function Summary() {
   return (

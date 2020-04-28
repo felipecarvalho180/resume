@@ -7,6 +7,7 @@ import Profile from './profile/Profile';
 import Techs from './techs/Techs';
 import Summary from './summary/Summary';
 import { mqTablet } from '../../styles/helper/HelperStyles';
+import WorkExperience from './work-experience/WorkExperience';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Summary />
       </ProfileWrapper>
       <Techs />
+      <WorkExperience />
     </Wrapper>
   );
 };

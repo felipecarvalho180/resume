@@ -7,9 +7,8 @@ import { LocationOn } from '@styled-icons/material-outlined/LocationOn';
 import propTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
-import { GRAY, LIGHT_GREEN } from '../../styles/colors/Colors';
+import { DARK_GRAY, ORANGE, WHITE } from '../../styles/colors/Colors';
 import { mqDesktop, mqTablet } from '../../styles/helper/HelperStyles';
-import { SubTitle, BaseLabel, iconBaseStyle } from '../../styles/component/ComponentStyles';
 
 export default function Card({
   value,
@@ -55,7 +54,7 @@ export default function Card({
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  border: solid 1px ${ GRAY };
+  border: solid 1px ${ ORANGE };
   padding: 20px;
   margin-bottom: 10px;
   border-radius: 10px;
@@ -73,29 +72,32 @@ const Wrapper = styled.div`
 `;
 
 const cardIconBaseStyle = css`
-  ${ iconBaseStyle };
+  align-self: center;
+  color: ${ DARK_GRAY };
+  margin-right: 5px;
   height: 20px;
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 
   ${ mqTablet(() => css`
+    flex-direction: row;
     justify-content: space-between;
   `) };
 `;
 
-const CardSubTitle = styled(SubTitle)`
+const CardSubTitle = styled.label`
   text-align: center;
+  font-size: 16px;
   margin-bottom: 10px;
   
   ${ mqTablet(() => css`
-    text-align: justify;
     margin-right: 30px;
+    text-align: justify;
   `) };
 `;
 
@@ -108,7 +110,7 @@ const Badge = styled.div`
   display: flex;
   min-width: 130px;
   justify-content: center;
-  background-color: ${ LIGHT_GREEN };
+  background-color: ${ ORANGE };
   padding: 5px;
   border-radius: 65px;
   height: 30px;
@@ -116,13 +118,16 @@ const Badge = styled.div`
 
 `;
 
-const BadgeLabel = styled(BaseLabel)`
+const BadgeLabel = styled.label`
+  color: ${ WHITE };
+  font-size: 16px;
   font-weight: bold;
   align-self: center;
 `;
 
-const DescriptionLabel = styled(BaseLabel)`
-  margin-bottom: 10px;
+const DescriptionLabel = styled.label`
+  font-size: 16px;
+  margin-bottom: 20px;
   text-align: justify;
 `;
 
@@ -130,8 +135,9 @@ const CalendarIcon = styled(CalendarAlt)`
   ${ cardIconBaseStyle };
 `;
 
-const CardLabel = styled(BaseLabel)`
-  color: ${ GRAY };
+const CardLabel = styled.label`
+  font-size: 16px;
+  color: ${ DARK_GRAY };
   font-weight: bold;
 `;
 

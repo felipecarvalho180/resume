@@ -7,92 +7,16 @@ import { ResponsiveLine } from '@nivo/line';
 import { ORANGE } from '../../../styles/colors/Colors';
 import Section from '../../../components/section/Section';
 import { Title } from '../../../styles/componet/ComponentStyles';
+import TECHS from '../../../constants/techs/TechsExperience';
 
 export default function Techs() {
-  const data = [{
-    id: "HTML",
-    data: [{
-      x: 2017,
-      y: 0
-    }, {
-      x: 2018,
-      y: 0.5
-    }, {
-      x: 2019,
-      y: 1.5
-    }, {
-      x: 2020,
-      y: 2.5
-    }],
-  }, {
-    id: "CSS",
-    data: [{
-      x: 2017,
-      y: 0
-    }, {
-      x: 2018,
-      y: 0.5
-    }, {
-      x: 2019,
-      y: 1.5
-    }, {
-      x: 2020,
-      y: 2.5
-    }],
-  }, {
-    id: "JavaScript",
-    data: [{
-      x: 2017,
-      y: 0
-    }, {
-      x: 2018,
-      y: 0
-    }, {
-      x: 2019,
-      y: 1
-    }, {
-      x: 2020,
-      y: 2
-    }],
-  }, {
-    id: "React",
-    data: [{
-      x: 2017,
-      y: 0
-    }, {
-      x: 2018,
-      y: 0
-    }, {
-      x: 2019,
-      y: 0.5
-    }, {
-      x: 2020,
-      y: 1.5
-    }],
-  }, {
-    id: "React Native",
-    data: [{
-      x: 2017,
-      y: 0
-    }, {
-      x: 2018,
-      y: 0
-    }, {
-      x: 2019,
-      y: 0
-    }, {
-      x: 2020,
-      y: 1
-    }],
-  }];
-
   return (
     <Wrapper>
       <Section>
         <CustomTitle>Techs</CustomTitle>
         <ResponsiveLine
           enablePoints={ true }
-          data={data}
+          data={ TECHS }
           margin={{ 
             top: 20, 
             right: 20,
@@ -158,6 +82,7 @@ const Wrapper = styled.div.attrs({
   id: 'Techs'
 })`
   height: 400px;
+  margin-bottom: 20px;
 
   & > div > div:last-child {
     width: 100%;

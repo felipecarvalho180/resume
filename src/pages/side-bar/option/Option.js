@@ -6,7 +6,7 @@ import { UserCircle, LineChart, Star } from '@styled-icons/boxicons-regular';
 import { transitions } from 'polished';
 
 import { LIGHT_ORANGE, ORANGE, DARK_GRAY } from '../../../styles/colors/Colors';
-import { pointer } from '../../../styles/helper/HelperStyles';
+import { pointer, mqTablet } from '../../../styles/helper/HelperStyles';
 
 export default function Option({
   type,
@@ -16,7 +16,7 @@ export default function Option({
   switch(type) {
     case 'Profile': Icon = UserIcon; break;
     case 'Techs': Icon = TechsIcon; break;
-    case 'Historic': Icon = HistoricIcon; break;
+    case 'WorkExperience': Icon = WorkExperienceIcon; break;
     default: throw new Error('Unknow type.');
   }
 
@@ -34,16 +34,18 @@ const Wrapper = styled.div`
   width: 100%;
   height: 60px;
 
-  ${ transitions([ 'background-color' ], 'ease .2s') };
+  ${ mqTablet(() => css`
+    ${ transitions([ 'background-color' ], 'ease .2s') };
 
-  :hover {
-    background-color: ${ LIGHT_ORANGE };
-    ${ pointer };
+    :hover {
+      background-color: ${ LIGHT_ORANGE };
+      ${ pointer };
 
-    & > :last-child > svg {
-      color: ${ ORANGE };
-    }
-  };
+      & > :last-child > svg {
+        color: ${ ORANGE };
+      }
+    };
+  `) }
 `;
 
 const IconWrapper = styled.div`
@@ -66,6 +68,6 @@ const TechsIcon = styled(LineChart)`
   ${ iconBaseStyle }
 `;
 
-const HistoricIcon = styled(Star)`
+const WorkExperienceIcon = styled(Star)`
   ${ iconBaseStyle }
 `;
